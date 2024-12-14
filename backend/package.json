@@ -1,0 +1,30 @@
+{
+  "name": "file-upload-app-backend",
+  "version": "1.0.0",
+  "description": "Backend for the File Upload App, a full-stack application for uploading and managing files.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "keywords": [
+    "file-upload",
+    "backend",
+    "express",
+    "mongodb",
+    "file-management"
+  ]
+}
