@@ -1,0 +1,251 @@
+ 
+
+
+
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{amsmath,amssymb}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Title Cheat Sheet}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.5in
+\advance\evensidemargin-1.5in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+\begin{document}
+
+\begin{center}{\huge{\textbf{Title Cheat Sheet}}}\\
+\end{center}
+\begin{multicols*}{3}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Relational Databases ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+   \begin{itemize}
+\item A relation in a database corresponds to a table. 
+\item Rows are called tuples; columns are attributes.
+\item Primary Key: uniquely identifies a tuple.
+\item Foreign Key: used to establish a relationship between tables.
+\item The order of rows is not significant.
+\item Physical and logical data independence allows schema change without affecting apps.
+\end{itemize}
+   
+\end{minipage}
+};
+%------------ Relational Databases  Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Relational Databases};
+\end{tikzpicture}
+
+%------------ Structured Query Language (SQL)  ---------------
+\begin{tikzpicture}
+\node [mybox] (box) {%
+    \begin{minipage}{0.3\textwidth}
+       \begin{itemize}
+\item SQL is used for data querying in relational databases.
+\item DDL includes CREATE, ALTER, DROP tables.
+\item DML: SELECT for retrieval, INSERT, UPDATE, DELETE.
+\item Fundamental in data science for data transformation.
+\item Basic form: \texttt{SELECT columns FROM table WHERE condition;}.
+\end{itemize}
+    \end{minipage}
+};
+%------------ Structured Query Language (SQL)  Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Structured Query Language (SQL)};
+\end{tikzpicture}
+
+%------------ SQLite Database ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \begin{itemize}
+\item SQLite is a lightweight, file-based DB.
+\item Useful for small apps, testing, embedded systems.
+\item Non-commercial; supports SQL standard.
+\item Offers limited concurrency features.
+\item ACID compliant via rollback journals.
+\end{itemize}
+    \end{minipage}
+};
+%------------ SQLite Database Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {SQLite Database};
+\end{tikzpicture}
+
+%------------ DB Browser for SQLite ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+   \begin{itemize}
+\item Tool for managing SQLite DBs without scripting.
+\item Easily run queries, create/modify tables.
+\item Import/export data in CSV format.
+\item Intuitive GUI, catering to various skill levels.
+\end{itemize}
+    \end{minipage}
+};
+%------------ DB Browser for SQLite Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {DB Browser for SQLite};
+\end{tikzpicture}
+%------------ Selection and Projection in SQL ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    	\begin{itemize}
+\item \textbf{SELECT} chooses specific columns from a table.
+\item \textbf{WHERE} clause filters rows based on conditions.
+\item \textbf{Projection}: retrieve specific attributes.
+\item Conditions without WHERE result in full table data.
+\end{itemize}
+    \end{minipage}
+};
+%------------ Selection and Projection in SQL Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Selection and Projection in SQL};
+\end{tikzpicture}
+
+%------------ Joins in SQL ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}  
+   \begin{itemize}
+\item Joins combine rows from two or more tables.
+\item \textbf{INNER JOIN}: returns rows with matching keys.
+\item \textbf{LEFT/RIGHT JOIN}: includes all from one table, matches from another.
+\item \textbf{FULL JOIN}: unions all matched and unmatched rows.
+\end{itemize}
+    \end{minipage}
+};
+%------------ Joins in SQL Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Joins in SQL};
+\end{tikzpicture}
+
+%------------ Minimum Spanning Trees (MSTs) ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \begin{itemize}
+\item Prim's algorithm: starts at a node, expands by minimum edge.
+\item Kruskal's: sorts edges, adds smallest edge not forming cycles.
+\item MST edge weight sum is minimal.
+\end{itemize}
+    \end{minipage}
+};
+%------------ Minimum Spanning Trees (MSTs) Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Minimum Spanning Trees (MSTs)};
+\end{tikzpicture}
+
+
+%------------ Graph Weight Modification and MSTs ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item Doubling edge weights scales MST weights.
+\item Adding a constant does not change MST itself.
+\end{itemize}
+    \end{minipage}
+};
+%------------ Graph Weight Modification and MSTs Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Graph Weight Modification and MSTs};
+\end{tikzpicture}
+\
+%------------ Shortest Path Trees ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \begin{itemize}
+\item Shortest path trees prioritize path cost.
+\item MST and shortest trees differ in objectives.
+\end{itemize}
+    \end{minipage}
+};
+%------------ Shortest Path Trees Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Shortest Path Trees};
+\end{tikzpicture}
+%------------ Relational Databases0 ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+	\begin{itemize}
+\item A relation in a database corresponds to a table. 
+\item Rows are called tuples; columns are attributes.
+\item Primary Key: uniquely identifies a tuple.
+\item Foreign Key: used to establish a relationship between tables.
+\item The order of rows is not significant.
+\item Physical and logical data independence allows schema change without affecting apps.
+\end{itemize}0
+	\end{minipage}
+};
+%------------ Relational Databases0 Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Relational Databases0};
+\end{tikzpicture}
+\\
+\\
+\\
+\\
+
+%------------ Relational Databases1 ---------------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+   \begin{itemize}
+\item A relation in a database corresponds to a table. 
+\item Rows are called tuples; columns are attributes.
+\item Primary Key: uniquely identifies a tuple.
+\item Foreign Key: used to establish a relationship between tables.
+\item The order of rows is not significant.
+\item Physical and logical data independence allows schema change without affecting apps.
+\end{itemize}1
+	\end{minipage}
+};
+%------------ Relational Databases1 Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Relational Databases1};
+\end{tikzpicture}
+
+%------------ Relational Databases2 ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \begin{itemize}
+\item A relation in a database corresponds to a table. 
+\item Rows are called tuples; columns are attributes.
+\item Primary Key: uniquely identifies a tuple.
+\item Foreign Key: used to establish a relationship between tables.
+\item The order of rows is not significant.
+\item Physical and logical data independence allows schema change without affecting apps.
+\end{itemize}2
+    \end{minipage}
+};
+%------------ Relational Databases2 Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Relational Databases2};
+\end{tikzpicture}
+\end{multicols*}
+\end{document}
