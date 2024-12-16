@@ -1,7 +1,4 @@
  
-
-
-
 \documentclass{article}
 \usepackage[landscape]{geometry}
 \usepackage{url}
@@ -47,205 +44,185 @@
     rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
 \tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
 
-%------------ Relational Databases ---------------
+%------------ Relational Database Concepts ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-   \begin{itemize}
-\item A relation in a database corresponds to a table. 
-\item Rows are called tuples; columns are attributes.
-\item Primary Key: uniquely identifies a tuple.
-\item Foreign Key: used to establish a relationship between tables.
-\item The order of rows is not significant.
-\item Physical and logical data independence allows schema change without affecting apps.
-\end{itemize}
    
+        \textbf{Relational Database:} A relational database organizes data into tables (relations) consisting of rows and columns, where each table represents a different entity.\\
+        \textbf{Primary Key:} A primary key is a unique identifier for each record in a table, ensuring that no two rows have the same primary key value.\\
+        \textbf{Foreign Key:} A foreign key is a column or set of columns in one table that uniquely identifies a row of another table, establishing a relationship between the two tables.\\
+        \textbf{Normalization: 1NF:} A table is in First Normal Form (1NF) if all its columns contain atomic, indivisible values and each column contains values of a single type.\\
+        \textbf{Database Relations:} Relations in a database refer to the logical connections between tables, often established through primary and foreign keys to maintain data integrity.\\
+            
 \end{minipage}
 };
-%------------ Relational Databases  Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Relational Databases};
+%------------ Relational Database Concepts  Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Relational Database Concepts};
 \end{tikzpicture}
 
-%------------ Structured Query Language (SQL)  ---------------
+%------------ SQL Basics  ---------------
 \begin{tikzpicture}
 \node [mybox] (box) {%
     \begin{minipage}{0.3\textwidth}
-       \begin{itemize}
-\item SQL is used for data querying in relational databases.
-\item DDL includes CREATE, ALTER, DROP tables.
-\item DML: SELECT for retrieval, INSERT, UPDATE, DELETE.
-\item Fundamental in data science for data transformation.
-\item Basic form: \texttt{SELECT columns FROM table WHERE condition;}.
-\end{itemize}
+       \textbf{Structured Query Language (SQL):} SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS).\\
+        \textbf{Data Definition Language (DDL):} DDL includes SQL commands such as CREATE, ALTER, and DROP, which are used to define or modify database structures.\\
+        \textbf{Data Manipulation Language (DML):} DML consists of SQL commands like SELECT, INSERT, UPDATE, and DELETE, which are used to retrieve and manipulate data in a database.\\
+        \textbf{SQL Statements:} SQL statements are used to perform tasks such as updating data on a database, or retrieving data from a database, and include SELECT, INSERT, UPDATE, DELETE, etc.\\
+        \textbf{SQL Joins:} Joins are SQL operations that allow you to combine rows from two or more tables based on a related column between them, such as INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN.\\
     \end{minipage}
 };
-%------------ Structured Query Language (SQL)  Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Structured Query Language (SQL)};
+%------------ SQL Basics  Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {SQL Basics};
 \end{tikzpicture}
 
-%------------ SQLite Database ---------------
+%------------ SQLite ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    \begin{itemize}
-\item SQLite is a lightweight, file-based DB.
-\item Useful for small apps, testing, embedded systems.
-\item Non-commercial; supports SQL standard.
-\item Offers limited concurrency features.
-\item ACID compliant via rollback journals.
-\end{itemize}
+    \textbf{SQLite Architecture:} SQLite is a file-based database engine that stores the entire database in a single file, making it lightweight and easy to deploy.\\
+        \textbf{SQL92 Standard Compliance:} SQLite supports most of the SQL92 standard, providing a wide range of SQL features for database management.\\
+        \textbf{Atomic Commit and Rollback:} SQLite ensures data integrity through atomic commit and rollback capabilities, allowing transactions to be completed fully or not at all.\\
+        \textbf{Data Types in SQLite:} SQLite uses dynamic typing, allowing flexibility in storing data types such as INTEGER, REAL, TEXT, BLOB, and NULL.\\
+        \textbf{Concurrency Control:} SQLite uses a locking mechanism to manage concurrency, allowing multiple readers or a single writer at any time.\\
     \end{minipage}
 };
-%------------ SQLite Database Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {SQLite Database};
+%------------ SQLite Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {SQLite};
 \end{tikzpicture}
 
-%------------ DB Browser for SQLite ---------------
+%------------ Minimum Spanning Tree Algorithms ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-   \begin{itemize}
-\item Tool for managing SQLite DBs without scripting.
-\item Easily run queries, create/modify tables.
-\item Import/export data in CSV format.
-\item Intuitive GUI, catering to various skill levels.
-\end{itemize}
-    \end{minipage}
+        \textbf{Minimum Spanning Tree (MST) Definition:} An MST of a graph $G$ is a subset of edges that connects all vertices with the minimum possible total edge weight.\\
+        \textbf{Prim's Algorithm:} Prim's algorithm starts with a single vertex and grows the MST by adding the cheapest edge from the tree to a vertex not yet in the tree.\\
+        \textbf{Kruskal's Algorithm:} Kruskal's algorithm builds the MST by sorting all edges and adding them one by one, ensuring no cycles are formed, until all vertices are connected.\\
+        \textbf{Edge Weights in MST:} Edge weights determine the selection of edges in MST algorithms, where the goal is to minimize the sum of the weights of the edges in the tree.\\
+        \textbf{Cycle Prevention in Kruskal's Algorithm:} Kruskal's algorithm uses a union-find data structure to efficiently check for cycles when adding edges to the MST.\\    \end{minipage}
 };
-%------------ DB Browser for SQLite Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {DB Browser for SQLite};
+%------------ Minimum Spanning Tree Algorithms Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Minimum Spanning Tree Algorithms};
 \end{tikzpicture}
-%------------ Selection and Projection in SQL ---------------------
+%------------ Graph Theoretical Concepts ---------------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    	\begin{itemize}
-\item \textbf{SELECT} chooses specific columns from a table.
-\item \textbf{WHERE} clause filters rows based on conditions.
-\item \textbf{Projection}: retrieve specific attributes.
-\item Conditions without WHERE result in full table data.
-\end{itemize}
+    	\textbf{Undirected Graph:} An undirected graph $G = (V, E)$ consists of a set of vertices $V$ and a set of edges $E$, where each edge is an unordered pair of vertices.\\
+        \textbf{Weighted Graph:} In a weighted graph, each edge $(u, v) \in E$ has an associated weight $w(u, v)$, representing the cost or distance between vertices $u$ and $v$.\\
+        \textbf{Vertex:} A vertex, also known as a node, is a fundamental part of a graph, representing an entity or a point where edges meet.\\
+        \textbf{Edge:} An edge in a graph is a connection between two vertices, and in an undirected graph, it is represented as an unordered pair $(u, v)$.\\
+        \textbf{Graph Connectivity:} A graph is connected if there is a path between every pair of vertices; otherwise, it is disconnected.\\
     \end{minipage}
 };
-%------------ Selection and Projection in SQL Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Selection and Projection in SQL};
+%------------ Graph Theoretical Concepts Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Graph Theoretical Concepts};
 \end{tikzpicture}
 
-%------------ Joins in SQL ---------------
+%------------ Standard Normal Distribution ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}  
-   \begin{itemize}
-\item Joins combine rows from two or more tables.
-\item \textbf{INNER JOIN}: returns rows with matching keys.
-\item \textbf{LEFT/RIGHT JOIN}: includes all from one table, matches from another.
-\item \textbf{FULL JOIN}: unions all matched and unmatched rows.
-\end{itemize}
+   \textbf{Standard Normal Distribution:} The standard normal distribution, denoted as $Z \sim N(0,1)$, is a normal distribution with a mean of 0 and a standard deviation of 1.\\
+        \textbf{Probability of Z:} The probability $P(Z > z)$ represents the area under the standard normal curve to the right of a given $z$-score.\\
+        \textbf{Area Under the Curve:} The area under the $N(0,1)$ distribution curve between two points gives the probability that $Z$ falls within that interval.\\
+        \textbf{Z-Score Calculation:} A $z$-score is calculated as $z = \frac{X - \mu}{\sigma}$, where $X$ is a value from the dataset, $\mu$ is the mean, and $\sigma$ is the standard deviation.\\
+        \textbf{Applications of Standard Normal Distribution:} The standard normal distribution is used to find probabilities and percentiles for normally distributed data by converting to $z$-scores.\\
     \end{minipage}
 };
-%------------ Joins in SQL Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Joins in SQL};
+%------------ Standard Normal Distribution Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Standard Normal Distribution};
 \end{tikzpicture}
 
-%------------ Minimum Spanning Trees (MSTs) ---------------
+%------------ Hypothesis Testing in Statistics ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    \begin{itemize}
-\item Prim's algorithm: starts at a node, expands by minimum edge.
-\item Kruskal's: sorts edges, adds smallest edge not forming cycles.
-\item MST edge weight sum is minimal.
-\end{itemize}
+    \textbf{Null Hypothesis ($H_0$):} The null hypothesis $H_0$ is a statement that there is no effect or no difference, and it is assumed true until evidence indicates otherwise.\\
+        \textbf{Alternative Hypothesis ($H_a$):} The alternative hypothesis $H_a$ is a statement that indicates the presence of an effect or a difference, opposing the null hypothesis.\\
+        \textbf{Population Parameter:} A population parameter is a numerical characteristic of a population, such as a mean ($\mu$) or standard deviation ($\sigma$), that is estimated using sample data.\\
+        \textbf{Sample Mean ($\bar{x}$):} The sample mean $\bar{x}$ is the average of a set of sample data, calculated as $\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$, where $n$ is the sample size.\\
+        \textbf{Significance Level ($\alpha$):} The significance level $\alpha$ is the probability of rejecting the null hypothesis when it is true, commonly set at 0.05 or 5\%.\\
     \end{minipage}
 };
-%------------ Minimum Spanning Trees (MSTs) Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Minimum Spanning Trees (MSTs)};
+%------------ Hypothesis Testing in Statistics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Hypothesis Testing in Statistics};
 \end{tikzpicture}
 
 
-%------------ Graph Weight Modification and MSTs ---------------
+%------------ Type I and Type II Errors ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-\begin{itemize}
-\item Doubling edge weights scales MST weights.
-\item Adding a constant does not change MST itself.
-\end{itemize}
+\textbf{Type I Error:} A Type I error occurs when we reject a true null hypothesis, with probability denoted by $\alpha$, the significance level.\\
+        \textbf{Type II Error:} A Type II error occurs when we fail to reject a false null hypothesis, with probability denoted by $\beta$.\\
+        \textbf{Significance Level:} The significance level $\alpha$ is the threshold for rejecting the null hypothesis, often set at 0.05 or 0.01.\\
+        \textbf{Power of a Test:} The power of a test is $1 - \beta$, representing the probability of correctly rejecting a false null hypothesis.\\
+        \textbf{Trade-off Between Type I and Type II Errors:} Reducing $\alpha$ to decrease Type I error increases $\beta$, thus increasing the chance of a Type II error.\\
     \end{minipage}
 };
-%------------ Graph Weight Modification and MSTs Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Graph Weight Modification and MSTs};
+%------------ Type I and Type II Errors Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Type I and Type II Errors};
 \end{tikzpicture}
 \
-%------------ Shortest Path Trees ---------------
+%------------ Confidence Intervals and Rejection Regions ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    \begin{itemize}
-\item Shortest path trees prioritize path cost.
-\item MST and shortest trees differ in objectives.
-\end{itemize}
+        \textbf{Confidence Intervals:} A confidence interval for a parameter $\theta$ is an interval $[L, U]$ such that $P(L \leq \theta \leq U) = 1 - \alpha$, where $\alpha$ is the significance level.\\
+        \textbf{Rejection Regions:} The rejection region is the set of all values of the test statistic for which the null hypothesis $H_0$ is rejected in favor of the alternative hypothesis $H_1$.\\
+        \textbf{Standard Error:} The standard error (SE) is the standard deviation of the sampling distribution of a statistic, often estimated as $SE = \frac{s}{\sqrt{n}}$, where $s$ is the sample standard deviation.\\
+        \textbf{Critical Value:} The critical value is the threshold value that the test statistic must exceed for the null hypothesis to be rejected, typically found from a statistical distribution table.\\
+        \textbf{Significance Level:} The significance level $\alpha$ is the probability of rejecting the null hypothesis when it is true, commonly set at 0.05 or 0.01 in hypothesis testing.\\
     \end{minipage}
 };
-%------------ Shortest Path Trees Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Shortest Path Trees};
+%------------ Confidence Intervals and Rejection Regions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Confidence Intervals and Rejection Regions};
 \end{tikzpicture}
-%------------ Relational Databases0 ---------------------
+%------------ Algorithmic Complexity and Optimization---------------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-	\begin{itemize}
-\item A relation in a database corresponds to a table. 
-\item Rows are called tuples; columns are attributes.
-\item Primary Key: uniquely identifies a tuple.
-\item Foreign Key: used to establish a relationship between tables.
-\item The order of rows is not significant.
-\item Physical and logical data independence allows schema change without affecting apps.
-\end{itemize}0
+	    \textbf{Time Complexity:} Time complexity measures the amount of time an algorithm takes to complete as a function of the length of the input, commonly expressed using Big O notation, e.g., $O(n)$ for linear time.\\
+        \textbf{Optimal Algorithm:} An optimal algorithm is one that solves a problem in the least possible time or space complexity, often serving as a benchmark for evaluating other algorithms.\\
+        \textbf{Linear Time Algorithms:} An algorithm runs in linear time, $O(n)$, if the time to complete is directly proportional to the size of the input data set.\\
+        \textbf{Quadratic Time Algorithms:} Quadratic time complexity, $O(n^2)$, indicates that the time taken is proportional to the square of the size of the input data set, often seen in nested loop scenarios.\\
+        \textbf{Algorithmic Optimization:} Algorithmic optimization involves improving an algorithm to reduce its time or space complexity, often by eliminating redundant operations or using more efficient data structures.\\
 	\end{minipage}
 };
-%------------ Relational Databases0 Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Relational Databases0};
+%------------ Algorithmic Complexity and Optimization Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Algorithmic Complexity and Optimization};
 \end{tikzpicture}
-\\
-\\
-\\
-\\
 
-%------------ Relational Databases1 ---------------------
+%------------ SQL Queries ---------------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-   \begin{itemize}
-\item A relation in a database corresponds to a table. 
-\item Rows are called tuples; columns are attributes.
-\item Primary Key: uniquely identifies a tuple.
-\item Foreign Key: used to establish a relationship between tables.
-\item The order of rows is not significant.
-\item Physical and logical data independence allows schema change without affecting apps.
-\end{itemize}1
+        \textbf{FROM Statement:} The FROM statement specifies the table from which to retrieve or delete data, forming the basis of the SQL query.\\
+        \textbf{WHERE Clause:} The WHERE clause filters records based on specified conditions, allowing for precise data retrieval in SQL queries.\\
+        \textbf{SELECT Statement:} The SELECT statement is used to query the database and retrieve data, specifying columns to be displayed.\\
+        \textbf{Joins in SQL:} Joins in SQL are used to combine rows from two or more tables based on a related column, enabling complex queries across multiple datasets.\\
+        \textbf{SQL Query Optimization:} Optimizing SQL queries involves using indexes, avoiding unnecessary columns in SELECT, and minimizing subqueries to improve performance.\\
 	\end{minipage}
 };
-%------------ Relational Databases1 Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Relational Databases1};
+%------------ SQL Queries Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {SQL Queries};
 \end{tikzpicture}
 
-%------------ Relational Databases2 ---------------
+%------------ Experimental Design in Statistics ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    \begin{itemize}
-\item A relation in a database corresponds to a table. 
-\item Rows are called tuples; columns are attributes.
-\item Primary Key: uniquely identifies a tuple.
-\item Foreign Key: used to establish a relationship between tables.
-\item The order of rows is not significant.
-\item Physical and logical data independence allows schema change without affecting apps.
-\end{itemize}2
+        \textbf{Sample Size:} The sample size $n$ affects the precision of estimates and the power of a statistical test, with larger samples providing more reliable results.\\
+        \textbf{Power of a Test:} The power of a test, $1 - \beta$, is the probability of correctly rejecting a false null hypothesis, and it increases with larger sample sizes and effect sizes.\\
+        \textbf{Significance Level:} The significance level $\alpha$ is the probability of rejecting the null hypothesis when it is true, commonly set at 0.05 for a 5% risk of Type I error.\\
+        \textbf{Variance:} Variance measures the dispersion of data points around the mean, and in experimental design, controlling variance is crucial for detecting true effects.\\
+        \textbf{Experimental Design:} Experimental design involves planning how to collect data efficiently and effectively to answer research questions, often using randomization to reduce bias.\\
     \end{minipage}
 };
-%------------ Relational Databases2 Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Relational Databases2};
+%------------ Experimental Design in Statistics Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Experimental Design in Statistics};
 \end{tikzpicture}
 \end{multicols*}
 \end{document}
+

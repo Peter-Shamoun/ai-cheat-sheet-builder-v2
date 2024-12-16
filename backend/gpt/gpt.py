@@ -125,32 +125,86 @@ class Latex_Output(BaseModel):
 
 t_list = output_to_input(all_topics)
 
+ex = r""" 
+$\mathbb{P}(A \cap B) = \mathbb{P}(A) \times \mathbb{P}(B)$ $\Leftrightarrow $independent \\
+   $\mathbb{P}(A^c) = 1 - \mathbb{P}(A)$\\
+   $\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) \Leftrightarrow \mathbb{P}(A \cap B) = 0$\\
+   $\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)$\\
+   $\mathbb{P}(A \cup B \cup C) = \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C) - \mathbb{P}(A \cap B) - \mathbb{P}(A \cap C) - \mathbb{P}(B \cap C) + \mathbb{P}(A \cap B \cap C)$\\
+   $\mathbb{P}(A) = \mathbb{P}(A \cap B) + \mathbb{P}(A \cap B^c)$\\
+   $\mathbb{P}(A \mid B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}$\\
+   $\mathbb{P}(A \cap B) = \mathbb{P}(A \mid B) \times \mathbb{P}(B)$\\
+   \( A \) and \( B \) are independent if and only if \( \mathbb{P}(A \mid B) = \mathbb{P}(A) \).\\
+   \text{Bayes Theorem:} $\mathbb{P}(B \mid A) = \frac{\mathbb{P}(A \mid B) \times \mathbb{P}(B)}{\mathbb{P}(A)}$
+"""
+
+
 completion = client.beta.chat.completions.parse(
     model="gpt-4o-2024-08-06",
     messages=[
-        {"role": "system", "content": """
+        {"role": "system", "content": f"""
         
-        You are a LaTeX code generator specializing in creating content for cheat sheets. Your task is to generate 12 blocks of detailed LaTeX code based on a provided string
-        that maps topics to their scope. Each block should focus on one topic and present all critical information compactly while remaining visually structured and engaging.
-        
-        Requirements:
-        Analyze the input string to extract key topics and their scopes.
-        Include comprehensive and relevant details for each topic while ensuring they fit well within the context of a cheat sheet.
-        Optimize for clarity and visual organization by utilizing lists, tables, and equations wherever appropriate to enhance readability and conserve space.
-        Ensure a balanced output length for each block, maintaining a minimum of 8-10 lines of LaTeX code per block.
-        Use compact formatting without unnecessary whitespace or excessively large text but ensure all information remains legible and well-structured.
-        Constraints:
-        Do not include big headers, bullet points with excessive spacing, or irrelevant details.
-        Ensure that the overall design prioritizes a dense, readable format suitable for a cheat sheet.
-        Validate that all blocks maintain clarity, completeness, and consistency.
-        Output format: Only include LaTeX code. Do not include explanations, headers, or any additional text.
+        You are an expert LaTeX code generator specializing in creating professional-grade cheat sheets with exceptional technical depth and visual precision.
 
+        Primary Objectives:
+        - Generate 12 highly sophisticated LaTeX code blocks
+        - Transform input topics into comprehensive, dense knowledge representations
+        - Create cheat sheets that serve as advanced reference materials for experts
+
+        Detailed Content Generation Requirements:
+        - For each topic, include:
+        * Fundamental definitions and core concepts
+        * Key formulas, theorems, or critical equations
+        * Practical examples or quick reference scenarios
+        * Subtle nuances or advanced insights that practitioners need to know
+        - Aim for technical depth that goes beyond surface-level information
+        - Include advanced techniques, edge cases, and expert-level insights
+        - Prioritize information density and technical comprehensiveness
+
+        LaTeX Formatting Directives:
+        - Utilize advanced LaTeX packages like `multicol`, `booktabs`, `amsmath`
+        - Create compact, multi-column layouts to maximize information density
+        - Use `\small` or `\footnotesize` text sizes to fit more content
+        - Implement tight spacing with for lists
+        - Use `tabular` and `tabularx` environments for structured data presentation
+        - Incorporate color-coding and strategic text highlighting for visual hierarchy
+
+        Complexity and Context Expectations:
+        - Generate content that reflects graduate-level or professional-grade knowledge
+        - Include theoretical foundations, practical applications, and interdisciplinary connections
+        - Demonstrate sophisticated understanding beyond basic textbook explanations
+        - Integrate cross-references and contextual relationships between subtopics
+        - Provide concise yet profound explanations that reveal deeper understanding
+
+        Validation Criteria:
+        - Minimum technical depth: Equivalent to advanced textbook or research paper level
+        - Information compression: Distill complex topics into 10-12 dense LaTeX code lines
+        - Technical accuracy: Ensure all information is precise, current, and authoritative
+        - Visual elegance: Create a professional, academic-grade presentation
+        - Zero tolerance for redundant or trivial information
+
+        Constraints:
+        - Absolutely no unnecessary whitespace
+        - Maintain extreme information density
+        - Prioritize technical precision over decorative formatting
+        - Ensure legibility and professional appearance
+
+         
+        Example LaTeX Block Demonstration:
+        {ex}
+         
+         
+        Output Instructions:
+        - Produce ONLY pure LaTeX code
+        - No explanatory text or headers
+        - Directly generate ready-to-compile LaTeX content
+         
 
         """},
 
         {"role": "user", "content": f"{t_list}"},
     ],
-    max_tokens = 10000,
+    max_tokens = 16_384 ,
 
     response_format=Latex_Output,
 )
